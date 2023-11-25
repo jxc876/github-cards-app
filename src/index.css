@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* dark theme */
+body {
+  background-color: rgb(8, 8, 8);
+  color: rgb(204, 204, 204)
+}
+
+input {
+  background-color: rgb(24, 24, 24);
+  color: rgb(238, 238, 238);
+  margin: 5px;
+  font-size: 20px;
+}
+
+#root {
+  width: 400px;
+}
