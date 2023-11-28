@@ -1,0 +1,26 @@
+name: Build Project
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    # https://github.com/marketplace/actions/checkout
+    - uses: actions/checkout@v4
+
+    # https://github.com/marketplace/actions/setup-node-js-environment
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '20.10.0'
+    
+    - name: Install dependencies
+      run: npm ci
+
+    - run: npm run build
