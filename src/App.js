@@ -37,16 +37,21 @@ class Form extends React.Component {
   };
 	render() {
   	return (
-    	<form onSubmit={this.handleSubmit}>
-    	  <input 
-          type="text" 
-          value={this.state.userName}
-          onChange={event => this.setState({ userName: event.target.value })}
-          placeholder="GitHub username" 
-          required 
-        />
-        <button>Add card</button>
-    	</form>
+      <>
+        <form onSubmit={this.handleSubmit}>
+          <input 
+            type="text" 
+            value={this.state.userName}
+            onChange={event => this.setState({ userName: event.target.value })}
+            placeholder="GitHub username" 
+            required 
+          />
+          <button>Add card</button>
+        </form>
+        <section>
+          ex: gaearon, sophiebits, sebmarkbage, bvaughn
+        </section>
+      </>
     );
   }
 }
