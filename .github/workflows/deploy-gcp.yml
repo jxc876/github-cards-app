@@ -54,4 +54,4 @@ jobs:
 
     - name: Push Files to GCP Storage bucket
       run: |
-        gcloud storage cp -r build/* gs://mike-test-bucket-999
+        gcloud storage cp -r build/* gs://${{ vars.BUCKET_NAME }}
