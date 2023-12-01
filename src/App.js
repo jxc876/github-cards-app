@@ -49,7 +49,7 @@ class Form extends React.Component {
           <button>Add card</button>
         </form>
         <section>
-          ex: gaearon, sophiebits, sebmarkbage, bvaughn
+          ex: gaearon, sophiebits, sebmarkbage, bvaughn, jxc876
         </section>
       </>
     );
