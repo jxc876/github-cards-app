@@ -12,6 +12,10 @@ on:
 
 jobs:
   build:
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+      deployments: write
     runs-on: ubuntu-latest
     environment:
       name: ${{ inputs.environment }}      
@@ -45,7 +49,8 @@ jobs:
       uses: google-github-actions/auth@v1
       with:
         project_id: ${{ vars.GCLOUD_PROJECT_ID }}
-        workload_identity_provider: '${{ vars.PROVIDER_URL }}'      
+        service_account: ${{ vars.SVC_ACCOUNT_EMAIL }}
+        workload_identity_provider: ${{ vars.PROVIDER_URL }}    
   
     # https://github.com/marketplace/actions/set-up-gcloud-cloud-sdk-environment
     - name: Setup Google Cloud CLI
